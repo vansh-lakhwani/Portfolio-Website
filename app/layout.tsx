@@ -3,6 +3,9 @@ import { Space_Grotesk, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CustomCursor from '@/components/CustomCursor'
+import ScrollProgress from '@/components/ScrollProgress'
+import ChatBot from '@/components/ChatBot'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -37,10 +40,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} style={{ scrollBehavior: 'smooth' }}>
-      <body className="bg-background text-text font-body antialiased overflow-x-hidden">
+      <body className="bg-background text-text font-body antialiased overflow-x-hidden cursor-none">
+        {/* Global UI chrome */}
+        <CustomCursor />
+        <ScrollProgress />
+
         <Navbar />
         <main>{children}</main>
         <Footer />
+
+        {/* Floating chatbot */}
+        <ChatBot />
       </body>
     </html>
   )

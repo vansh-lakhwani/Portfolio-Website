@@ -1,5 +1,6 @@
 'use client'
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Download, Terminal } from 'lucide-react'
 import { trackResumeDownload } from '@/lib/analytics'
 import SocialButtons from '@/components/SocialButtons'
@@ -7,6 +8,38 @@ import SocialButtons from '@/components/SocialButtons'
 const FADE = {
   hidden:  { opacity: 0, y: 24 },
   visible: (i = 0) => ({ opacity: 1, y: 0, transition: { delay: i * 0.12, duration: 0.6, ease: 'easeOut' as const } }),
+}
+
+// Typewriter words that cycle in the hero headline
+const TYPEWRITER_WORDS = ['backend logic', 'APIs', 'systems', 'pipelines', 'microservices']
+
+function TypewriterWord() {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex(i => (i + 1) % TYPEWRITER_WORDS.length)
+    }, 2200)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <span className="relative inline-block">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={TYPEWRITER_WORDS[index]}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.35, ease: 'easeInOut' }}
+          className="bg-gradient-to-r from-mint to-mint-dim bg-clip-text text-transparent inline-block"
+        >
+          {TYPEWRITER_WORDS[index]}
+        </motion.span>
+      </AnimatePresence>
+      <span className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-mint/60 to-transparent" />
+    </span>
+  )
 }
 
 export default function Hero() {
@@ -37,13 +70,8 @@ export default function Hero() {
             className="font-heading text-display-lg font-bold leading-[1.05] tracking-tight"
           >
             Building the{' '}
-            <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-mint to-mint-dim bg-clip-text text-transparent">
-                backend
-              </span>
-              <span className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-mint/60 to-transparent" />
-            </span>
-            {' '}logic that powers great products.
+            <TypewriterWord />
+            {' '}that powers great products.
           </motion.h1>
 
           <motion.p
@@ -93,7 +121,10 @@ export default function Hero() {
           variants={FADE} initial="hidden" animate="visible" custom={2}
           className="hidden md:block"
         >
-          <div className="glass-card p-6 font-mono text-sm">
+          <motion.div
+            className="glass-card p-6 font-mono text-sm"
+            whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+          >
             {/* Terminal bar */}
             <div className="flex items-center gap-2 mb-4">
               <span className="w-3 h-3 rounded-full bg-red-400/70" />
@@ -114,7 +145,7 @@ export default function Hero() {
             <p className="text-muted mt-3">$ <span className="text-mint">git status</span></p>
             <p className="text-green-400 mt-1 text-xs">✓ Open to work — ready to push to production</p>
             <span className="inline-block w-2 h-4 bg-mint/80 animate-pulse mt-2 align-middle" />
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 

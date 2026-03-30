@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --mint:        #5DCAA5;
+    --purple:      #7F77DD;
+    --background:  #0A0F1E;
+    --surface:     #0E1322;
+    --card:        #111827;
+    --text:        #E8EDF5;
+    --muted:       #8892A4;
+    --border-glass: rgba(93, 202, 165, 0.15);
+    --glass-bg:    rgba(255, 255, 255, 0.04);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text font-body antialiased;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(93,202,165,0.08), transparent);
+  }
+
+  ::selection {
+    background: rgba(93, 202, 165, 0.3);
+    color: #fff;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar        { width: 6px; }
+  ::-webkit-scrollbar-track  { background: #0A0F1E; }
+  ::-webkit-scrollbar-thumb  { background: rgba(93,202,165,0.3); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(93,202,165,0.6); }
+}
+
+@layer components {
+  /* Glass card — the core primitive */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+  .glass-card:hover {
+    border-color: rgba(93, 202, 165, 0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(93,202,165,0.05);
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-body font-medium text-sm;
+    background: linear-gradient(135deg, #5DCAA5, #7AE6C0);
+    color: #003829;
+    transition: box-shadow 0.3s ease-out, transform 0.2s ease-out;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 20px rgba(93,202,165,0.4);
+    transform: translateY(-1px);
+  }
+
+  /* Ghost / outline button */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-body font-medium text-sm;
+    border: 1px solid rgba(93, 202, 165, 0.3);
+    color: #5DCAA5;
+    background: transparent;
+    transition: background 0.3s ease-out, border-color 0.3s ease-out;
+  }
+  .btn-ghost:hover {
+    background: rgba(93, 202, 165, 0.08);
+    border-color: rgba(93, 202, 165, 0.6);
+  }
+
+  /* Section label chip */
+  .label-chip {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium tracking-widest uppercase;
+    background: rgba(93, 202, 165, 0.1);
+    color: var(--mint);
+    border: 1px solid rgba(93, 202, 165, 0.2);
+    border-radius: 9999px;
+  }
+
+  /* Tech tag */
+  .tech-tag {
+    @apply px-3 py-1 text-xs font-medium rounded-full;
+    background: rgba(127, 119, 221, 0.15);
+    color: #C5C0FF;
+    border: 1px solid rgba(127, 119, 221, 0.2);
+  }
+
+  /* Subtle gradient section divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(93,202,165,0.2) 30%, rgba(93,202,165,0.2) 70%, transparent);
+  }
+
+  /* Download icon bounce — add class to the <svg/> wrapper inside a .resume-btn */
+  .resume-btn .download-icon {
+    transition: transform 0.2s ease-out;
+  }
+  .resume-btn:hover .download-icon {
+    animation: downloadBounce 0.6s ease-in-out;
+  }
+
+  @keyframes downloadBounce {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(4px); }
+    55%  { transform: translateY(-2px); }
+    75%  { transform: translateY(3px); }
+    90%  { transform: translateY(-1px); }
+    100% { transform: translateY(0); }
+  }
+}

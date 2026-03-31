@@ -94,7 +94,7 @@ export default function Hero() {
               View My Work <ArrowRight size={16} />
             </button>
             <a
-              href="https://drive.google.com/uc?export=download&id=149TxPGa2D8aHfEGhdhztlpOFbPxuJyga"
+              href="/vansh-resume.pdf"
               download="Vansh_Lakhwani_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"

@@ -171,7 +171,7 @@ export default function ChatBot() {
         const updated = [...prev]
         updated[updated.length - 1] = {
           role: 'assistant',
-          content: "Sorry, I couldn't reach the AI service. Please try again or contact Vansh directly at lakhwanivansh@gmail.com",
+          content: `Sorry, I couldn't reach the AI service. Please try again or contact Vansh directly at ${process.env.NEXT_PUBLIC_EMAIL || ''}`,
         }
         return updated
       })

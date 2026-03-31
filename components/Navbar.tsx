@@ -16,8 +16,7 @@ const NAV_LINKS = [
   { label: 'Schedule',     id: 'scheduler'    },
 ] as const
 
-const RESUME_URL =
-  'https://drive.google.com/uc?export=download&id=149TxPGa2D8aHfEGhdhztlpOFbPxuJyga'
+const RESUME_URL = '/vansh-resume.pdf'
 
 // ── Smooth scroll helper ──────────────────────────────────────────────────────
 function scrollTo(id: string, close?: () => void) {

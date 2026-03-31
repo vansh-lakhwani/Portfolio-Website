@@ -14,7 +14,7 @@ export interface GithubRepo {
 }
 
 const GITHUB_API = 'https://api.github.com'
-const USERNAME   = process.env.GITHUB_USERNAME ?? 'vansh-lakhwani'
+const USERNAME   = process.env.GITHUB_USERNAME ?? ''
 const TOKEN      = process.env.GITHUB_TOKEN
 
 function authHeaders(): HeadersInit {

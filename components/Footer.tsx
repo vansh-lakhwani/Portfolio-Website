@@ -56,7 +56,7 @@ export default function Footer() {
             <p className="text-xs text-muted uppercase tracking-widest mb-4">Connect</p>
             <SocialButtons size="md" className="mb-4" />
             <a
-              href="https://drive.google.com/uc?export=download&id=149TxPGa2D8aHfEGhdhztlpOFbPxuJyga"
+              href="/vansh-resume.pdf"
               download="Vansh_Lakhwani_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"

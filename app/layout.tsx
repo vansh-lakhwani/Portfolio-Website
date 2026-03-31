@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   title: 'Vansh Lakhwani — Backend Developer',
   description: 'Backend developer fresher specialising in Node.js, Python, and cloud-native APIs.',
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
   openGraph: {
     title: 'Vansh Lakhwani — Backend Developer',

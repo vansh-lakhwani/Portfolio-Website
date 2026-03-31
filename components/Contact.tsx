@@ -1,7 +1,7 @@
 'use client'
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Send, Mail, MapPin, MessageSquare, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+import { Send, MapPin, MessageSquare, CheckCircle, AlertCircle, Loader2, Mail } from 'lucide-react'
 import SocialButtons, { LinkedInCard } from '@/components/SocialButtons'
 
 const FADE_UP = {
@@ -13,7 +13,8 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 type FormState = 'idle' | 'loading' | 'success' | 'error'
 
-const EMPTY = { name: '', email: '', subject: '', message: '', honeypot: '' }
+const EMPTY = { name: '', email: '', phone: '', subject: '', message: '', honeypot: '' }
+const EMAIL = process.env.NEXT_PUBLIC_EMAIL || ''
 
 export default function Contact() {
   const ref    = useRef(null)
@@ -48,6 +49,7 @@ export default function Contact() {
           name:      form.name.trim(),
           email:     form.email.trim(),
           subject:   form.subject.trim(),
+          phone:     form.phone.trim(),
           message:   form.message.trim(),
           honeypot:  form.honeypot, // empty for real users
         }),
@@ -88,7 +90,7 @@ export default function Contact() {
             className="md:col-span-2 flex flex-col gap-4"
           >
             {[
-              { icon: <Mail size={18} className="text-mint" />, label: 'Email', value: 'lakhwanivansh@gmail.com', href: 'mailto:lakhwanivansh@gmail.com' },
+              { icon: <Mail size={18} className="text-mint" />, label: 'Email', value: EMAIL, href: `mailto:${EMAIL}` },
               { icon: <MapPin size={18} className="text-mint" />, label: 'Location', value: 'India', href: null },
             ].map((item) => (
               <div key={item.label} className="glass-card p-5 flex items-center gap-4">
@@ -173,7 +175,7 @@ export default function Contact() {
                       id="name" name="name" type="text" required
                       value={form.name} onChange={handleChange}
                       placeholder="Your name"
-                      className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-text placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
+                      className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-black placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -182,20 +184,31 @@ export default function Contact() {
                       id="email" name="email" type="email" required
                       value={form.email} onChange={handleChange}
                       placeholder="you@example.com"
-                      className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-text placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
+                      className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-black placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
                     />
                   </div>
                 </div>
 
-                {/* Subject */}
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="subject" className="text-xs text-muted uppercase tracking-widest">Subject</label>
-                  <input
-                    id="subject" name="subject" type="text" required
-                    value={form.subject} onChange={handleChange}
-                    placeholder="Job opportunity / Project / Just saying hi"
-                    className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-text placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
-                  />
+                {/* Phone + Subject */}
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="phone" className="text-xs text-muted uppercase tracking-widest">Phone (Optional)</label>
+                    <input
+                      id="phone" name="phone" type="tel"
+                      value={form.phone} onChange={handleChange}
+                      placeholder="+91 XXXXX XXXXX"
+                      className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-black placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="subject" className="text-xs text-muted uppercase tracking-widest">Subject</label>
+                    <input
+                      id="subject" name="subject" type="text" required
+                      value={form.subject} onChange={handleChange}
+                      placeholder="Job opportunity / Project"
+                      className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-black placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
+                    />
+                  </div>
                 </div>
 
                 {/* Message */}
@@ -205,7 +218,7 @@ export default function Contact() {
                     id="message" name="message" required rows={5}
                     value={form.message} onChange={handleChange}
                     placeholder="Tell me about the opportunity or project..."
-                    className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-text placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors resize-none"
+                    className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-black placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors resize-none"
                   />
                 </div>
 

@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer'
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, subject, message, honeypot } = await req.json()
+    const { name, email, phone, subject, message, honeypot } = await req.json()
 
     // ── Honeypot: bots fill hidden fields, humans don't ──────────────────
     if (honeypot) {
@@ -74,18 +74,19 @@ export async function POST(req: NextRequest) {
                     <p style="margin:0 0 6px;color:#8892A4;font-size:11px;text-transform:uppercase;letter-spacing:1px;">From</p>
                     <p style="margin:0;color:#E8EDF5;font-size:16px;font-weight:600;">${escapeHtml(name)}</p>
                     <a href="mailto:${escapeHtml(email)}" style="color:#5DCAA5;font-size:13px;text-decoration:none;">${escapeHtml(email)}</a>
+                    ${phone ? `<p style="margin:4px 0 0;color:#CDD5E0;font-size:13px;">📞 ${escapeHtml(phone)}</p>` : ''}
                   </td>
                 </tr>
               </table>
               <!-- Subject -->
               <p style="margin:0 0 6px;color:#8892A4;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Subject</p>
-              <p style="margin:0 0 24px;color:#E8EDF5;font-size:15px;font-weight:500;padding:10px 14px;background:rgba(255,255,255,0.04);border-radius:8px;border-left:3px solid #5DCAA5;">
+              <p style="margin:0 0 24px;color:#000000;font-size:15px;font-weight:500;padding:10px 14px;background:#F9FAFB;border-radius:8px;border-left:3px solid #5DCAA5;">
                 ${escapeHtml(subject)}
               </p>
               <!-- Message -->
               <p style="margin:0 0 6px;color:#8892A4;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Message</p>
-              <div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:16px;border:1px solid rgba(255,255,255,0.08);">
-                <p style="margin:0;color:#CDD5E0;font-size:14px;line-height:1.7;white-space:pre-wrap;">${escapeHtml(message)}</p>
+              <div style="background:#F9FAFB;border-radius:10px;padding:16px;border:1px solid rgba(255,255,255,0.08);">
+                <p style="margin:0;color:#000000;font-size:14px;line-height:1.7;white-space:pre-wrap;">${escapeHtml(message)}</p>
               </div>
               <!-- Reply hint -->
               <p style="margin:24px 0 0;color:#8892A4;font-size:12px;text-align:center;">

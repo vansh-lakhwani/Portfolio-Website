@@ -1,11 +1,10 @@
 'use client'
-import { Mail } from 'lucide-react'
-import { GithubIcon, LinkedinIcon } from '@/lib/icons'
+import { GithubIcon, LinkedinIcon, InstagramIcon } from '@/lib/icons'
 
 // Read from env — fallback to known values so it works without a server restart
-const LINKEDIN_URL = process.env.NEXT_PUBLIC_LINKEDIN_URL ?? 'https://www.linkedin.com/in/vansh-lakhwani-059b89294/'
-const GITHUB_URL   = process.env.NEXT_PUBLIC_GITHUB_URL   ?? 'https://github.com/vansh-lakhwani'
-const EMAIL        = process.env.NEXT_PUBLIC_EMAIL         ?? 'lakhwanivansh@gmail.com'
+const LINKEDIN_URL = process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ''
+const GITHUB_URL   = process.env.NEXT_PUBLIC_GITHUB_URL   ?? ''
+const EMAIL        = process.env.NEXT_PUBLIC_EMAIL        ?? ''
 
 const BUTTONS = [
   {
@@ -21,10 +20,10 @@ const BUTTONS = [
     external: true,
   },
   {
-    label: 'Email',
-    href:  `mailto:${EMAIL}`,
-    icon:  <Mail size={18} />,
-    external: false,
+    label: 'Instagram',
+    href:  'https://www.instagram.com/_vansh_lakhwani_/',
+    icon:  <InstagramIcon size={18} />,
+    external: true,
   },
 ]
 
@@ -87,7 +86,7 @@ export function LinkedInCard() {
 
       <div className="flex-1 min-w-0">
         <p className="text-text font-medium text-sm">Connect on LinkedIn</p>
-        <p className="text-muted text-xs mt-0.5 truncate">linkedin.com/in/vansh-lakhwani</p>
+        <p className="text-muted text-xs mt-0.5 truncate">{LINKEDIN_URL}</p>
       </div>
 
       {/* Arrow indicator */}

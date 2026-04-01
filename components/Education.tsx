@@ -2,7 +2,7 @@
 import { useState, useRef } from 'react'
 import Image from 'next/image'
 import { motion, useInView, type Variants } from 'framer-motion'
-import { GraduationCap, BookOpen, Award, MapPin } from 'lucide-react'
+import { GraduationCap, BookOpen, Award, MapPin, Check } from 'lucide-react'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface EducationItem {
@@ -15,8 +15,6 @@ interface EducationItem {
   score: string
   scoreType: 'cgpa' | 'percentage'
   achievements: string[]
-  logo: string
-  logoFallback: string
   status: 'ongoing' | 'completed'
   icon: 'graduation' | 'book' | 'award'
 }
@@ -27,14 +25,12 @@ const educationData: EducationItem[] = [
     id: 1,
     degree: 'Bachelor of Technology',
     branch: 'Computer Science & Engineering',
-    institution: 'Vellore Institute of Technology',
-    affiliation: 'VIT University — Specialization in AI & ML',
+    institution: 'Dr. D.Y. Patil School of Science and Technology',
+    affiliation: 'Dr. D.Y. Patil Vidyapeeth — Specialization in AI & DS',
     yearRange: '2022 – Present',
     score: 'CGPA: 8.2',
     scoreType: 'cgpa',
-    achievements: ['Top 10% of batch', 'Dean\'s List 2023'],
-    logo: '/logos/university.png',
-    logoFallback: 'VIT',
+    achievements: ['Top 10% of batch', 'Team Lead - Binary Brain Club'],
     status: 'ongoing',
     icon: 'graduation',
   },
@@ -42,14 +38,12 @@ const educationData: EducationItem[] = [
     id: 2,
     degree: 'Senior Secondary (Class XII)',
     branch: 'Science Stream — PCM',
-    institution: 'Ryan International School',
+    institution: 'Lifeline Public School',
     affiliation: 'CBSE Board',
     yearRange: '2020 – 2022',
-    score: 'Percentage: 85%',
+    score: 'Percentage: 86.2%',
     scoreType: 'percentage',
-    achievements: ['School Topper in Maths'],
-    logo: '/logos/school-12th.png',
-    logoFallback: 'RIS',
+    achievements: ['JEE Mains Score - 92.84%ile'],
     status: 'completed',
     icon: 'book',
   },
@@ -57,14 +51,12 @@ const educationData: EducationItem[] = [
     id: 3,
     degree: 'Secondary (Class X)',
     branch: 'All Subjects',
-    institution: "St. Xavier's High School",
+    institution: "St. Conrad's Inter College",
     affiliation: 'ICSE Board',
     yearRange: '2018 – 2020',
-    score: 'Percentage: 90%',
+    score: 'Percentage: 89.8%',
     scoreType: 'percentage',
-    achievements: ['District Rank Holder'],
-    logo: '/logos/school-10th.png',
-    logoFallback: 'SXS',
+    achievements: ['Highesst Score in CS'],
     status: 'completed',
     icon: 'award',
   },
@@ -72,15 +64,15 @@ const educationData: EducationItem[] = [
 
 // ── Animation variants ────────────────────────────────────────────────────────
 const cardLeft: Variants = {
-  hidden:  { opacity: 0, x: -40 },
+  hidden: { opacity: 0, x: -40 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 }
 const cardRight: Variants = {
-  hidden:  { opacity: 0, x: 40 },
+  hidden: { opacity: 0, x: 40 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 }
 const dotVariant: Variants = {
-  hidden:  { opacity: 0, scale: 0 },
+  hidden: { opacity: 0, scale: 0 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: 'easeOut' as const } },
 }
 
@@ -88,7 +80,7 @@ const dotVariant: Variants = {
 function ItemIcon({ type }: { type: EducationItem['icon'] }) {
   const cls = 'text-white w-5 h-5'
   if (type === 'graduation') return <GraduationCap className={cls} />
-  if (type === 'book')       return <BookOpen className={cls} />
+  if (type === 'book') return <BookOpen className={cls} />
   return <Award className={cls} />
 }
 
@@ -137,6 +129,17 @@ function OngoingBadge() {
   )
 }
 
+function CompletedBadge() {
+  return (
+    <span className="inline-flex items-center gap-1.5 px-2.5 py-1
+                     bg-mint/10 border border-mint/30
+                     text-mint text-[11px] font-bold rounded-full uppercase tracking-wide">
+      <Check size={10} strokeWidth={3} />
+      Completed
+    </span>
+  )
+}
+
 // ── Single education card ─────────────────────────────────────────────────────
 function EducationCard({
   item,
@@ -147,7 +150,7 @@ function EducationCard({
   side: 'left' | 'right'
   inView: boolean
 }) {
-  const isLeft  = side === 'left'
+  const isLeft = side === 'left'
   const variant = isLeft ? cardLeft : cardRight
 
   return (
@@ -169,9 +172,9 @@ function EducationCard({
           <ItemIcon type={item.icon} />
         </div>
 
-        {/* Year + Ongoing badge */}
+        {/* Year + Status badge */}
         <div className={`flex items-center gap-2 ${isLeft ? 'md:flex-row-reverse' : ''}`}>
-          {item.status === 'ongoing' && <OngoingBadge />}
+          {item.status === 'ongoing' ? <OngoingBadge /> : <CompletedBadge />}
           <span className="px-3 py-1 bg-mint/10 text-mint text-xs font-bold rounded-full font-body">
             {item.yearRange}
           </span>
@@ -249,7 +252,7 @@ function MobileDot({ inView }: { inView: boolean }) {
 
 // ── Main section ──────────────────────────────────────────────────────────────
 export default function Education() {
-  const ref    = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (

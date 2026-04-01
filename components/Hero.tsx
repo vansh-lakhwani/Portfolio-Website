@@ -6,7 +6,7 @@ import { trackResumeDownload } from '@/lib/analytics'
 import SocialButtons from '@/components/SocialButtons'
 
 const FADE = {
-  hidden:  { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 24 },
   visible: (i = 0) => ({ opacity: 1, y: 0, transition: { delay: i * 0.12, duration: 0.6, ease: 'easeOut' as const } }),
 }
 
@@ -78,7 +78,7 @@ export default function Hero() {
             variants={FADE} initial="hidden" animate="visible" custom={2}
             className="text-muted text-lg leading-relaxed max-w-md"
           >
-            I&apos;m <span className="text-text font-medium">Vansh Lakhwani</span>, a backend
+            I&apos;m <span className="text-text font-large">Vansh Lakhwani</span>, a backend
             developer fresher crafting scalable APIs, data pipelines, and server-side systems
             with precision.
           </motion.p>

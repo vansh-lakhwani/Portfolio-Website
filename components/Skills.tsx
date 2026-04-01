@@ -4,7 +4,7 @@ import { motion, useInView, type Variants } from 'framer-motion'
 import { Cpu } from 'lucide-react'
 
 const FADE_UP: Variants = {
-  hidden:  { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 24 },
   visible: (i = 0) => ({
     opacity: 1, y: 0,
     transition: { delay: i * 0.07, duration: 0.5, ease: 'easeOut' as const },
@@ -15,61 +15,77 @@ const SKILL_GROUPS = [
   {
     label: 'Languages',
     skills: [
-      { name: 'Python',     level: 85 },
+      { name: 'Python', level: 85 },
       { name: 'TypeScript', level: 80 },
       { name: 'JavaScript', level: 80 },
-      { name: 'Java',       level: 65 },
-      { name: 'SQL',        level: 75 },
+      { name: 'Java', level: 65 },
+      { name: 'SQL', level: 75 },
     ],
   },
   {
     label: 'Frameworks & Libraries',
     skills: [
-      { name: 'Node.js',  level: 82 },
-      { name: 'Express',  level: 80 },
-      { name: 'FastAPI',  level: 72 },
-      { name: 'Next.js',  level: 70 },
-      { name: 'Prisma',   level: 68 },
+      { name: 'Node.js', level: 82 },
+      { name: 'Express', level: 80 },
+      { name: 'FastAPI', level: 72 },
+      { name: 'Next.js', level: 70 },
+      { name: 'Prisma', level: 68 },
     ],
   },
   {
     label: 'Databases',
     skills: [
       { name: 'PostgreSQL', level: 78 },
-      { name: 'MongoDB',    level: 75 },
-      { name: 'Redis',      level: 65 },
-      { name: 'MySQL',      level: 70 },
+      { name: 'MongoDB', level: 75 },
+      { name: 'Redis', level: 65 },
+      { name: 'MySQL', level: 70 },
     ],
   },
   {
     label: 'Cloud & DevOps',
     skills: [
-      { name: 'Docker',  level: 70 },
-      { name: 'AWS',     level: 60 },
-      { name: 'Vercel',  level: 80 },
+      { name: 'Docker', level: 70 },
+      { name: 'AWS', level: 60 },
+      { name: 'Vercel', level: 80 },
       { name: 'GitHub Actions', level: 65 },
-      { name: 'Linux',   level: 72 },
+      { name: 'Linux', level: 72 },
+    ],
+  },
+  {
+    label: 'AI Tools',
+    skills: [
+      { name: 'Google Stitch', level: 70 },
+      { name: 'Antigravity', level: 75 },
+      { name: 'Vercel', level: 70 },
+      { name: 'Claude', level: 65 },
+      { name: 'ChatGPT', level: 73 },
     ],
   },
 ]
 
 const EXPERIENCE = [
   {
-    role: 'Backend Developer Fresher',
-    company: 'Open to Work',
-    period: '2024 — Present',
+    role: 'Project Intern',
+    company: 'TATA Technologies',
+    period: 'Nov 2025 — Present',
     desc: 'Actively building personal projects and seeking opportunities in backend engineering roles.',
   },
   {
-    role: 'Computer Science Student',
-    company: 'University',
-    period: '2022 — 2026',
+    role: 'MERN Intern',
+    company: 'Uluka Systems Pvt. Ltd.',
+    period: 'Oct 2025',
+    desc: 'Studying CS fundamentals, data structures, algorithms, and software engineering practices.',
+  },
+  {
+    role: 'Machine Learning Intern',
+    company: 'Uluka Systems Pvt. Ltd.',
+    period: 'Aug 2024 - Feb 2025',
     desc: 'Studying CS fundamentals, data structures, algorithms, and software engineering practices.',
   },
 ]
 
 export default function Skills() {
-  const ref    = useRef(null)
+  const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (

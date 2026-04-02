@@ -28,7 +28,7 @@ const educationData: EducationItem[] = [
     institution: 'Dr. D.Y. Patil School of Science and Technology',
     affiliation: 'Dr. D.Y. Patil Vidyapeeth — Specialization in AI & DS',
     yearRange: '2022 – Present',
-    score: 'CGPA: 8.2',
+    score: 'CGPA: 9.33',
     scoreType: 'cgpa',
     achievements: ['Top 10% of batch', 'Team Lead - Binary Brain Club'],
     status: 'ongoing',

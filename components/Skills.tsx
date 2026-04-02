@@ -175,7 +175,7 @@ export default function Skills() {
                 Also Familiar With
               </h3>
               <div className="flex flex-wrap gap-2">
-                {['REST APIs', 'GraphQL', 'WebSockets', 'JWT', 'OAuth2', 'CI/CD', 'Nginx', 'Microservices', 'Git', 'Postman', 'Jest'].map(t => (
+                {['Vercel', 'Cal.com', 'REST APIs', 'GraphQL', 'WebSockets', 'JWT', 'OAuth2', 'CI/CD', 'Nginx', 'Microservices', 'Git', 'Postman', 'Jest'].map(t => (
                   <span key={t} className="tech-tag">{t}</span>
                 ))}
               </div>

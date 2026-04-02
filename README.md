@@ -70,20 +70,32 @@
 
 ---
 
+---
+
 ## 🎥 Screen Recording
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/embed-id-placeholder" width="100%" autoplay loop muted playsinline></video>
+  <!-- Replace the URL below with your hosted video link (GitHub, Cloudinary, YouTube, etc.) -->
+  <video src="https://path-to-your-hosted-video.mp4" width="100%" autoplay loop muted playsinline></video>
 </div>
 
-> [!TIP]
-> **Pro Tip for Hosting Large Videos on GitHub:**
-> Since your video is over 100MB, GitHub won't let you push it directly. To get the perfect autoplaying experience:
-> 1. Go to your GitHub repository on the web.
-> 2. Open a **New Issue** (don't worry, you don't have to submit it).
-> 3. **Drag and drop** your `public/Profile.mp4` file into the issue comment box.
-> 4. Wait for it to upload, then **copy the generated URL** (e.g., `https://github.com/user-attachments/assets/...`).
-> 5. **Replace the placeholder URL** in the `<video>` tag above with your new link!
+> [!IMPORTANT]
+> **Video Hosting Alternatives (Since GitHub upload failed):**
+> 1. **Preferred: Cloudinary (Free Tier)**
+>    - Upload `public/Profile.mp4` to a free [Cloudinary](https://cloudinary.com/) account.
+>    - Copy the **Direct URL** (it ends in `.mp4`) and paste it into the `src=""` above.
+>    - This is the best way to get a **high-quality, autoplaying video** on scroll.
+> 2. **Professional: YouTube**
+>    - Upload the video to your YouTube channel as "Unlisted" or "Public".
+>    - Use this syntax in your README for a nice image-link:
+>      ```markdown
+>      [![Watch Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+>      ```
+> 3. **Compressed Inside Repo:**
+>    - Use an online tool like [Ezgif](https://ezgif.com/video-to-mp4) to compress the video to **under 80MB**.
+>    - Once compressed, you can `git add` and `git push` it directly.
+
+---
 
 ---
 

@@ -35,7 +35,7 @@
 
 ## 📸 Hero Screenshot
 
-![Portfolio Hero Section](public/screenshots/hero.png)
+![Portfolio Hero Section](public/Heropage.png)
 *Hero section of Vansh Lakhwani's portfolio*
 
 ---
@@ -75,7 +75,7 @@
 ## 🎥 Screen Recording
 
 <div align="center">
-  <!-- Replace the URL below with your hosted video link (GitHub, Cloudinary, YouTube, etc.) -->
+https://path-to-your-hosted-video.mp4
   <video src="https://path-to-your-hosted-video.mp4" width="100%" autoplay loop muted playsinline></video>
 </div>
 

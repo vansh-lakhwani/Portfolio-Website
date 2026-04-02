@@ -72,11 +72,18 @@
 
 ## 🎥 Screen Recording
 
-https://github.com/user-attachments/assets/embed-id-placeholder
-*(Assuming the video is uploaded to GitHub or referenced relatively)*
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/embed-id-placeholder" width="100%" autoplay loop muted playsinline></video>
+</div>
 
-> [!NOTE]
-> If viewing locally, you can find the recording at: `public/Profile.mp4`
+> [!TIP]
+> **Pro Tip for Hosting Large Videos on GitHub:**
+> Since your video is over 100MB, GitHub won't let you push it directly. To get the perfect autoplaying experience:
+> 1. Go to your GitHub repository on the web.
+> 2. Open a **New Issue** (don't worry, you don't have to submit it).
+> 3. **Drag and drop** your `public/Profile.mp4` file into the issue comment box.
+> 4. Wait for it to upload, then **copy the generated URL** (e.g., `https://github.com/user-attachments/assets/...`).
+> 5. **Replace the placeholder URL** in the `<video>` tag above with your new link!
 
 ---
 

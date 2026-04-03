@@ -74,7 +74,11 @@
 
 ## 🎥 Screen Recording
 
-
+<div align="center">
+  <video src="public/Profile.mp4" width="100%" autoplay loop muted playsinline>
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 ---
 

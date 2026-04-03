@@ -16,40 +16,41 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid messages format' }, { status: 400 })
     }
 
-    const apiKey = process.env.GROQ_API_KEY
+    const apiKey = process.env.OPENAI_API_KEY
     if (!apiKey) {
+      console.error('[chat/route] Missing OPENAI_API_KEY')
       return NextResponse.json({ error: 'Chatbot not configured' }, { status: 503 })
     }
 
-    // Call Groq API with streaming
-    const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    // Call OpenAI API with streaming
+    const openAiRes = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
+        model: 'gpt-4o', // Using gpt-4o for its high reasoning capabilities
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
-          ...messages.slice(-10), // keep last 10 messages to stay within context
+          ...messages.slice(-10), // keep last 10 messages for context
         ],
-        max_tokens: 512,
-        temperature: 0.4,
+        max_tokens: 1024,
+        temperature: 0.7,
         stream: true,
       }),
     })
 
-    if (!groqRes.ok) {
-      const err = await groqRes.text()
-      console.error('[chat/route] Groq error:', err)
+    if (!openAiRes.ok) {
+      const err = await openAiRes.text()
+      console.error('[chat/route] OpenAI error:', err)
       return NextResponse.json({ error: 'AI service error' }, { status: 502 })
     }
 
     // Stream the response back to the client
     const stream = new ReadableStream({
       async start(controller) {
-        const reader = groqRes.body?.getReader()
+        const reader = openAiRes.body?.getReader()
         if (!reader) { controller.close(); return }
 
         const decoder = new TextDecoder()

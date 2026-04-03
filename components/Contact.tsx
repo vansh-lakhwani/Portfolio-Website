@@ -175,7 +175,7 @@ export default function Contact() {
                       id="name" name="name" type="text" required
                       value={form.name} onChange={handleChange}
                       placeholder="Your name"
-                      className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-black placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
+                      className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-text placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -184,7 +184,7 @@ export default function Contact() {
                       id="email" name="email" type="email" required
                       value={form.email} onChange={handleChange}
                       placeholder="you@example.com"
-                      className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-black placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
+                      className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-text placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
                     />
                   </div>
                 </div>
@@ -197,7 +197,7 @@ export default function Contact() {
                       id="phone" name="phone" type="tel"
                       value={form.phone} onChange={handleChange}
                       placeholder="+91 XXXXX XXXXX"
-                      className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-black placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
+                      className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-text placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -206,7 +206,7 @@ export default function Contact() {
                       id="subject" name="subject" type="text" required
                       value={form.subject} onChange={handleChange}
                       placeholder="Job opportunity / Project"
-                      className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-black placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
+                      className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-text placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors"
                     />
                   </div>
                 </div>
@@ -218,7 +218,7 @@ export default function Contact() {
                     id="message" name="message" required rows={5}
                     value={form.message} onChange={handleChange}
                     placeholder="Tell me about the opportunity or project..."
-                    className="bg-white/4 border border-white/10 rounded-lg px-4 py-3 text-sm text-black placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors resize-none"
+                    className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-text placeholder-muted/50 focus:outline-none focus:border-mint/50 transition-colors resize-none"
                   />
                 </div>
 

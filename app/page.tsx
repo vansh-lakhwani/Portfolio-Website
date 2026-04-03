@@ -10,7 +10,7 @@ import Scheduler from '@/components/Scheduler'
 import SectionFade from '@/components/SectionFade'
 import { fetchGithubRepos } from '@/lib/github'
 
-export const revalidate = 3600
+export const revalidate = 300
 
 async function ProjectsSection() {
   const repos = await fetchGithubRepos(6)

@@ -33,7 +33,7 @@ export async function fetchGithubRepos(limit = 6): Promise<GithubRepo[]> {
       `${GITHUB_API}/users/${USERNAME}/repos?sort=updated&per_page=100&type=owner`,
       {
         headers: authHeaders(),
-        next: { revalidate: 3600 }, // ISR — refresh every hour
+        next: { revalidate: 300 }, // ISR — refresh every 5 minutes
       }
     )
 
@@ -66,7 +66,7 @@ export async function getRepo(repoName: string): Promise<GithubRepo | null> {
   try {
     const res = await fetch(`${GITHUB_API}/repos/${USERNAME}/${repoName}`, {
       headers: authHeaders(),
-      next: { revalidate: 3600 },
+      next: { revalidate: 300 },
     })
     if (!res.ok) return null
     return res.json()

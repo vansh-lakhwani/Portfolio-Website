@@ -70,20 +70,6 @@
 
 ---
 
----
-
-## 🎥 Screen Recording
-
-<div align="center">
-  <video src="https://github.com/vansh-lakhwani/Portfolio-Website/raw/main/public/Profile.mp4" width="100%" autoplay loop muted playsinline>
-    Your browser does not support the video tag.
-  </video>
-</div>
-
----
-
----
-
 ## 🛠️ Tech Stack
 
 ### Frontend & Logic

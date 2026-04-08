@@ -72,22 +72,38 @@
 
 ## 🛠️ Tech Stack
 
+This portfolio is built with modern web development standards, focusing on performance, typography, and clean animations.
+
 ### Frontend & Logic
 ![Next.js](https://img.shields.io/badge/Next.js_14-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
-![Lucide React](https://img.shields.io/badge/Lucide_Icons-F7B93E?style=flat-square&logo=lucide&logoColor=white)
+
+*   **Next.js 14 (App Router)**: Core framework leveraging Server Components for optimized load times.
+*   **React 18**: Foundational library for building the user interface.
+*   **TypeScript**: Used throughout the entire codebase to provide strict type safety.
 
 ### Backend & API
 ![Nodemailer](https://img.shields.io/badge/Nodemailer-339933?style=flat-square&logo=node.js&logoColor=white)
 ![GitHub API](https://img.shields.io/badge/GitHub_API_v3-181717?style=flat-square&logo=github&logoColor=white)
 ![Cal.com](https://img.shields.io/badge/Cal.com-000000?style=flat-square&logo=cal.com&logoColor=white)
 
+*   **Next.js API Routes**: Serverless functions handling backend logic securely.
+*   **Nodemailer**: Integrates with Gmail SMTP to process contact form submissions.
+*   **GitHub REST API**: Fetches repository data dynamically for live project showcases.
+*   **Cal.com**: Embedded directly to allow seamless meeting scheduling.
+
 ### Design & Styling
 ![Stitch](https://img.shields.io/badge/Stitch_Design-5DCAA5?style=flat-square)
 ![CSS3](https://img.shields.io/badge/Vanilla_CSS-1572B6?style=flat-square&logo=css3&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
 ![Glassmorphism](https://img.shields.io/badge/Theme-Navy_%26_Mint-0A0F1E?style=flat-square)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
+![Lucide React](https://img.shields.io/badge/Lucide_Icons-F7B93E?style=flat-square&logo=lucide&logoColor=white)
+
+*   **Tailwind CSS**: Utility-first styling for building a custom, fully responsive UI.
+*   **Framer Motion**: Powers the dynamic experience with scroll effects and entrance animations.
+*   **Stitch Design**: Core design aesthetics focusing on deep navy and mint accents.
 
 ---
 

@@ -2,6 +2,7 @@
 import { useRef } from 'react'
 import { motion, useInView, type Variants } from 'framer-motion'
 import { Cpu } from 'lucide-react'
+import { familiarTech } from '@/lib/familiarTech'
 
 const FADE_UP: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -175,8 +176,20 @@ export default function Skills() {
                 Also Familiar With
               </h3>
               <div className="flex flex-wrap gap-2">
-                {['Vercel', 'Cal.com', 'REST APIs', 'GraphQL', 'WebSockets', 'JWT', 'OAuth2', 'CI/CD', 'Nginx', 'Microservices', 'Git', 'Postman', 'Jest'].map(t => (
-                  <span key={t} className="tech-tag">{t}</span>
+                {familiarTech.map(tech => (
+                  <span key={tech.name} className="tech-tag" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <img
+                      src={tech.cdnLogo}
+                      alt={tech.name}
+                      width={16}
+                      height={16}
+                      style={{ width: '16px', height: '16px', objectFit: 'contain' }}
+                      onError={(e) => {
+                        e.currentTarget.src = tech.localLogo
+                      }}
+                    />
+                    <span>{tech.name}</span>
+                  </span>
                 ))}
               </div>
             </motion.div>

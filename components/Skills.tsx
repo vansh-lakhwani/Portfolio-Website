@@ -179,7 +179,7 @@ export default function Skills() {
                 {familiarTech.map(tech => (
                   <span key={tech.name} className="tech-tag" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <img
-                      src={tech.cdnLogo}
+                      src={tech.localLogo}
                       alt={tech.name}
                       width={16}
                       height={16}

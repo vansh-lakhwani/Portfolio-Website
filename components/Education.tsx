@@ -56,7 +56,7 @@ const educationData: EducationItem[] = [
     yearRange: '2018 – 2020',
     score: 'Percentage: 89.8%',
     scoreType: 'percentage',
-    achievements: [NaN],
+    achievements: ["NaN"],
     status: 'completed',
     icon: 'award',
   },

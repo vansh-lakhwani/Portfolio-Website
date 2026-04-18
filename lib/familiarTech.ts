@@ -11,30 +11,36 @@ export const familiarTech = [
 
   },
   {
-    name: "REST APIs",
-    slug: "fastapi",
-    localLogo: "/logo/fastapi.svg",
+    name: "Git",
+    slug: "git",
+    localLogo: "/logo/git.svg",
 
   },
   {
-    name: "GraphQL",
-    slug: "graphql",
-    localLogo: "/logo/graphql.svg",
+    name: "Git-Hub",
+    slug: "github",
+    localLogo: "/logo/github.svg",
+
   },
   {
-    name: "WebSockets",
-    slug: "socketdotio",
-    localLogo: "/logo/socketdotio.svg",
+    name: "Firebase",
+    slug: "firebase",
+    localLogo: "/logo/firebase.svg",
   },
   {
-    name: "JWT",
-    slug: "jsonwebtokens",
-    localLogo: "/logo/jsonwebtokens.svg",
+    name: "Expo",
+    slug: "expo",
+    localLogo: "/logo/expo.svg",
   },
   {
-    name: "OAuth2",
-    slug: "auth0",
-    localLogo: "/logo/auth0.svg",
+    name: "ChatGPT",
+    slug: "chatgpt",
+    localLogo: "/logo/chatgpt.svg",
+  },
+  {
+    name: "Claude",
+    slug: "claude",
+    localLogo: "/logo/claude.svg",
   },
   {
     name: "CI/CD",
@@ -54,12 +60,7 @@ export const familiarTech = [
     localLogo: "/logo/docker.svg",
 
   },
-  {
-    name: "Git",
-    slug: "git",
-    localLogo: "/logo/git.svg",
 
-  },
   {
     name: "Postman",
     slug: "postman",

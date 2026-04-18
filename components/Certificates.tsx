@@ -21,104 +21,107 @@ interface Certificate {
 const certificatesData: Certificate[] = [
   {
     id: 1,
-    title: 'Complete Node.js Developer Course',
-    platform: 'Udemy',
-    date: 'Oct 2024',
+    title: 'IgniteX - 1.0',
+    platform: 'Wadhwani Foundation',
+    date: 'April 2026',
     category: 'courses',
     description:
-      'Mastered backend architecture including REST APIs, GraphQL integration, and async programming with Node.js & Express. 40+ hours of hands-on lab projects.',
-    driveLink: 'https://drive.google.com/file/d/1UY9Qs8uNCLjH9mi3lV4eYU4QnGKJVK0_/view?usp=sharing',
+      'Completed 42 hours of entrepreneurship training focused on turning innovative ideas into actionable ventures. Developed a Certified Practice Venture recognized for excellence and real-world impact',
+    driveLink: 'https://drive.google.com/file/d/1hqY6Yhx5lOJgQj4Sxpl3iWQOVgBQcA55/view?usp=sharing',
     featured: false,
   },
   {
     id: 2,
-    title: 'Problem Solving Certificate',
-    platform: 'HackerRank',
-    date: '2024',
-    category: 'coding',
-    driveLink: 'https://drive.google.com/file/d/19DhQQXzT5fezl9NLXY02KtbenbdfKLqN/view?usp=sharing',
+    title: 'Web Development',
+    platform: 'YouVah',
+    date: '2023',
+    category: 'courses',
+    driveLink: 'https://drive.google.com/file/d/1dlU3UvWugJ_L8D48VMCk8-uVo2BWK_lQ/view?usp=drive_link',
     featured: false,
   },
   {
     id: 3,
-    title: '1st Place — TechFest Hackathon 2024',
-    platform: 'VIT University',
-    date: 'Jan 2024',
+    title: '3rd Place — 5G NEXUS Ideathon 2024',
+    platform: 'Dr. D.Y. Patil School of Science and Technology, Pune',
+    date: 'April 2024',
     category: 'hackathon',
     description:
-      'Built a scalable Go-based API handling 5k+ requests/min. Integrated real-time data streaming and distributed caching to win first place.',
-    driveLink: 'https://drive.google.com/file/d/1mPMSYM1LODaQbP8plXot_-V4uhgWDGkr/view?usp=sharing',
+      'Secured 3rd place in a technical ideathon organized by the Institution\'s Innovation Council (IIC), R&D department, and the IEEE Student Branch at Dr. D.Y. Patil School of Science & Technology.',
+    driveLink: 'https://drive.google.com/file/d/1ntWIx8V6G2XvgA-gXrGi77PO9NhsDsYj/view?usp=drive_link',
     featured: true,
   },
   {
     id: 4,
-    title: 'Advanced SQL Masterclass',
-    platform: 'Udemy',
-    date: 'Sep 2024',
+    title: 'TCS iON Career Edge Young Professional',
+    platform: 'TCS iON',
+    date: 'Jan 2024',
     category: 'courses',
-    driveLink: 'https://drive.google.com/file/d/1mPMSYM1LODaQbP8plXot_-V4uhgWDGkr/view?usp=sharing',
+    description: 'Completed the TCS iON Career Edge - Young Professional program, gaining certified skills in professional communication, business etiquette, foundational IT, and career readiness',
+    driveLink: 'https://drive.google.com/file/d/1TgB5NJsy-4H55Q3b6jdgMrcojiOThinz/view?usp=drive_link',
     featured: false,
   },
   {
     id: 5,
-    title: 'Best Project Award',
-    platform: 'VIT University',
-    date: 'May 2024',
-    category: 'award',
+    title: 'Foundation Course on Green Skills and Artificial Intelligence',
+    platform: '7-Day Workshop at Dr. D. Y. Patil School of Science & Technology',
+    date: 'Oct 2024',
+    category: 'courses',
     description:
-      'Recognised for "Outstanding Technical Innovation" in a capstone project focusing on blockchain-based security systems.',
+      'Completed the Foundation course on Green Skills and Artificial Intelligence under the Skills4Future Program in October 2024. This program was held at Dr. D. Y. Patil School of Science & Technology and was supported by Edunet Foundation, AICTE, and Shell India Markets Pvt Ltd.',
+    driveLink: 'https://drive.google.com/file/d/16mbTNKwNRmCJf51Y8POw9p-cILrowDIh/view?usp=drive_link',
     featured: false,
   },
   {
     id: 6,
-    title: '500+ Problems Solved on LeetCode',
-    platform: 'LeetCode',
+    title: 'Winner in Smart India Hackathon 2023 - Internal',
+    platform: 'Dr. D. Y. Patil School of Science and Technology, Pune',
     date: '2024',
-    category: 'coding',
-    driveLink: 'https://leetcode.com/u/vansh-lakhwani/',
-    featured: false,
+    category: 'hackathon',
+    description: 'Event organized under the guidance of the Ministry of Education\'s Innovation Cell and AICTE',
+    driveLink: 'https://drive.google.com/file/d/1LVdleJppoeyhvCbjc90rpeJUs-OxwCx5/view?usp=drive_link',
+    featured: true,
   },
 ]
 
 // ── Stats ─────────────────────────────────────────────────────────────────────
 const STATS = [
   { number: 12, label: 'Certificates earned' },
-  { number: 8,  label: 'Courses completed'   },
-  { number: 5,  label: 'Hackathons'           },
-  { number: 3,  label: 'Awards won'           },
+  { number: 8, label: 'Courses completed' },
+  { number: 5, label: 'Hackathons' },
+  { number: 3, label: 'Awards won' },
 ]
 
 // ── Filter config ─────────────────────────────────────────────────────────────
 const FILTERS: { label: string; value: Category }[] = [
-  { label: 'All',                value: 'all'       },
-  { label: 'Courses',            value: 'courses'   },
-  { label: 'Coding & DSA',       value: 'coding'    },
-  { label: 'Hackathons & Awards',value: 'hackathon' },
+  { label: 'All', value: 'all' },
+  { label: 'Courses', value: 'courses' },
+  { label: 'Coding', value: 'coding' },
+  { label: 'Hackathons & Awards', value: 'hackathon' },
 ]
 
 // ── Category colour map ───────────────────────────────────────────────────────
 const CAT_COLORS: Record<Exclude<Category, 'all'>, { text: string; bg: string; border: string }> = {
-  courses:   { text: '#C5C0FF', bg: 'rgba(127,119,221,0.12)', border: 'rgba(127,119,221,0.3)' },
-  coding:    { text: '#5DCAA5', bg: 'rgba(93,202,165,0.12)',  border: 'rgba(93,202,165,0.3)'  },
-  hackathon: { text: '#EF9F27', bg: 'rgba(239,159,39,0.12)', border: 'rgba(239,159,39,0.3)'  },
-  award:     { text: '#ffc6b8', bg: 'rgba(216,90,48,0.12)',  border: 'rgba(216,90,48,0.3)'   },
+  courses: { text: '#C5C0FF', bg: 'rgba(127,119,221,0.12)', border: 'rgba(127,119,221,0.3)' },
+  coding: { text: '#5DCAA5', bg: 'rgba(93,202,165,0.12)', border: 'rgba(93,202,165,0.3)' },
+  hackathon: { text: '#EF9F27', bg: 'rgba(239,159,39,0.12)', border: 'rgba(239,159,39,0.3)' },
+  award: { text: '#ffc6b8', bg: 'rgba(216,90,48,0.12)', border: 'rgba(216,90,48,0.3)' },
 }
 
 const CAT_LABELS: Record<Exclude<Category, 'all'>, string> = {
-  courses:   'Course',
-  coding:    'Coding & DSA',
+  courses: 'Course',
+  coding: 'Coding',
   hackathon: 'Hackathon',
-  award:     'Award',
+  award: 'Award',
 }
 
 // ── Category icon ─────────────────────────────────────────────────────────────
 function CatIcon({ cat }: { cat: Exclude<Category, 'all'> }) {
   const color = CAT_COLORS[cat].text
-  const cls   = `w-5 h-5 shrink-0`
-  if (cat === 'courses')   return <BookOpen   className={cls} style={{ color }} />
-  if (cat === 'coding')    return <Code2       className={cls} style={{ color }} />
-  if (cat === 'hackathon') return <Trophy      className={cls} style={{ color }} />
-  return                          <Star        className={cls} style={{ color }} />
+  const cls = `w-5 h-5 shrink-0`
+  if (cat === 'courses') return <BookOpen className={cls} style={{ color }} />
+  if (cat === 'coding') return <Code2 className={cls} style={{ color }} />
+  if (cat === 'hackathon') return <Trophy className={cls} style={{ color }} />
+  return <Star className={cls} style={{ color }} />
 }
 
 // ── Count-up hook ─────────────────────────────────────────────────────────────
@@ -158,11 +161,11 @@ function StatCard({ number, label, active }: { number: number; label: string; ac
 
 // ── Certificate card ──────────────────────────────────────────────────────────
 function CertCard({ item, index }: { item: Certificate; index: number }) {
-  const colors  = CAT_COLORS[item.category]
+  const colors = CAT_COLORS[item.category]
   const isFeatured = item.featured
 
   const cardVariant: Variants = {
-    hidden:  { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1, y: 0,
       transition: { duration: 0.4, delay: index * 0.08, ease: 'easeOut' as const },
@@ -268,10 +271,10 @@ function CertCard({ item, index }: { item: Certificate; index: number }) {
 
 // ── Main section ──────────────────────────────────────────────────────────────
 export default function Certificates() {
-  const ref    = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
-  const statsRef    = useRef<HTMLDivElement>(null)
+  const statsRef = useRef<HTMLDivElement>(null)
   const statsInView = useInView(statsRef, { once: true, margin: '-60px' })
 
   const [activeFilter, setActiveFilter] = useState<Category>('all')
@@ -335,14 +338,14 @@ export default function Certificates() {
                 style={
                   isActive
                     ? {
-                        background: '#5DCAA5',
-                        color: '#003829',
-                      }
+                      background: '#5DCAA5',
+                      color: '#003829',
+                    }
                     : {
-                        border: '1px solid rgba(61,73,68,0.8)',
-                        color: '#bdcac2',
-                        background: 'transparent',
-                      }
+                      border: '1px solid rgba(61,73,68,0.8)',
+                      color: '#bdcac2',
+                      background: 'transparent',
+                    }
                 }
                 onMouseEnter={(e) => {
                   if (!isActive)

@@ -72,20 +72,31 @@ const EXPERIENCE = [
     role: 'Project Intern',
     company: 'TATA Technologies',
     period: 'Nov 2025 — Present',
-    desc: 'Developing AI-driven Effort Estimator system to optimize software development timeline planning for enterprise stakeholders. Leveraging transformer-based models with embeddings to interpret unstructured requirements and generate structured SDLC outputs.Integrating COCOMO model with historical production data and resource allocation patterns to improve estimation reliability by 30%.',
+    desc: ['Developing AI-driven Effort Estimator system to optimize software development timeline planning for enterprise stakeholders.',
+      'Leveraging transformer-based models with embeddings to interpret unstructured requirements and generate structured SDLC outputs.',
+      'Integrating COCOMO model with historical production data and resource allocation patterns to improve estimation reliability by 30%.'],
   },
   {
     role: 'Software Engineer Intern',
     company: 'Uluka Systems Pvt. Ltd.',
     period: 'Oct 2025',
-    desc: 'Validated mission-critical ADS-B electronic systems through comprehensive testing using C, Python, and LAMP stack. Conducted Factory Acceptance Testing (FAT) including BOM verification, functional validation, and GPS/NTP synchronization testing. Performed EMI/EMC testing and resolved interference issues through advanced grounding and shielding techniques.',
+    desc: [
+      'Validated mission-critical ADS-B electronic systems through comprehensive testing using C, Python, and LAMP stack.',
+      'Conducted Factory Acceptance Testing (FAT) including BOM verification, functional validation, and GPS/NTP synchronization testing.',
+      'Performed EMI/EMC testing and resolved interference issues through advanced grounding and shielding techniques.'
+    ],
   },
   {
     role: 'Machine Learning Intern',
     company: 'Uluka Systems Pvt. Ltd.',
     period: 'Aug 2024 - Feb 2025',
-    desc: 'Architected end-to-end ML pipeline for Road Condition Assessment using real-time sensor data from Android devices, processing 10,000+ data points. Reduced feature dimensionality by 40% using PCA while engineering meaningful features (total acceleration, jerk, speed) from raw time-series signals. Implemented K-Means clustering achieving 85% accuracy in classifying road surfaces into smooth, rough, and mixed categories with geospatial visualization via Folium',
+    desc: [
+      'Architected end-to-end ML pipeline for Road Condition Assessment using real-time sensor data from Android devices, processing 10,000+ data points.',
+      'Reduced feature dimensionality by 40% using PCA while engineering meaningful features (total acceleration, jerk, speed) from raw time-series signals.',
+      'Implemented K-Means clustering achieving 85% accuracy in classifying road surfaces into smooth, rough, and mixed categories with geospatial visualization via Folium.'
+    ],
   },
+
 ]
 
 export default function Skills() {
@@ -164,7 +175,17 @@ export default function Skills() {
                     <span className="text-xs text-muted whitespace-nowrap">{exp.period}</span>
                   </div>
                   <p className="text-mint text-sm font-medium mb-2">{exp.company}</p>
-                  <p className="text-muted text-sm leading-relaxed">{exp.desc}</p>
+                  {Array.isArray(exp.desc) ? (
+                    <ul className="text-muted text-sm leading-relaxed mt-2 space-y-2 list-disc list-outside ml-5">
+                      {exp.desc.map((item, idx) => (
+                        <li key={idx} className="pl-1">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-muted text-sm leading-relaxed">{exp.desc}</p>
+                  )}
                 </motion.div>
               ))}
             </div>

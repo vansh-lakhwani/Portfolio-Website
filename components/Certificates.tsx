@@ -85,10 +85,10 @@ const certificatesData: Certificate[] = [
 
 // ── Stats ─────────────────────────────────────────────────────────────────────
 const STATS = [
-  { number: 12, label: 'Certificates earned' },
-  { number: 8, label: 'Courses completed' },
-  { number: 5, label: 'Hackathons' },
-  { number: 3, label: 'Awards won' },
+  { number: 10, label: 'Certificates earned' },
+  { number: 3, label: 'Courses completed' },
+  { number: 2, label: 'Hackathons' },
+  { number: 1, label: 'Awards won' },
 ]
 
 // ── Filter config ─────────────────────────────────────────────────────────────
